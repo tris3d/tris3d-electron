@@ -1,0 +1,41 @@
+{
+  "name": "tris3d-electron",
+  "version": "0.1.0",
+  "description": "play tic tac toe in 3d",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "https://fibo.github.io"
+  },
+  "main": "app/main.cjs",
+  "scripts": {
+    "check_types": "tsc --project .",
+    "lint-staged": "lint-staged",
+    "start": "electron .",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tris3d/tris3d-electron.git"
+  },
+  "devDependencies": {
+    "electron": "^28.2.1",
+    "lint-staged": "^15.2.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "*.cjs": [
+      "prettier --write"
+    ],
+    "*.{json,html,md}": [
+      "prettier --write"
+    ]
+  },
+  "pre-commit": [
+    "lint-staged",
+    "check_types"
+  ]
+}
